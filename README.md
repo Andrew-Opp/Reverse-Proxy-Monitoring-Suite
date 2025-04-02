@@ -111,7 +111,7 @@ If you’d like to contribute, feel free to open an issue or submit a pull reque
 
 ## 📢 Contact
 
-For questions or discussions, reach out[ via ]([https://linkedin.com/in/yourprofile](https://www.linkedin.com/in/andrew-oppong-asante-663368286/))**[LinkedIn](https://linkedin.com/in/yourprofile)** or **GitHub Issues**.
+For questions or discussions, reach out[ via ]([https://linkedin.com/in/yourprofile](https://www.linkedin.com/in/andrew-oppong-asante-663368286/))**[LinkedIn](https://www.linkedin.com/in/andrew-oppong-asante-663368286/)** or **GitHub Issues**.
 
 ---
 
