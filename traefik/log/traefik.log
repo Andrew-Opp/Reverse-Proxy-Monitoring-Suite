@@ -1,0 +1,99 @@
+time="2025-04-01T12:50:03Z" level=info msg="Traefik version 2.10.7 built on 2023-12-06T15:54:59Z"
+time="2025-04-01T12:50:03Z" level=info msg="\nStats collection is disabled.\nHelp us improve Traefik by turning this feature on :)\nMore details on: https://doc.traefik.io/traefik/contributing/data-collection/\n"
+time="2025-04-01T12:50:03Z" level=info msg="Starting provider aggregator aggregator.ProviderAggregator"
+time="2025-04-01T12:50:03Z" level=info msg="Starting provider *file.Provider"
+time="2025-04-01T12:50:03Z" level=error msg="Cannot start the provider *file.Provider: error adding file watcher: no such file or directory"
+time="2025-04-01T12:50:03Z" level=info msg="Starting provider *traefik.Provider"
+time="2025-04-01T12:50:03Z" level=info msg="Starting provider *docker.Provider"
+time="2025-04-01T12:50:03Z" level=info msg="Starting provider *acme.ChallengeTLSALPN"
+time="2025-04-01T12:50:04Z" level=error msg="middleware \"security-headers@file\" does not exist" routerName=app2@docker entryPointName=websecure
+time="2025-04-01T12:50:04Z" level=error msg="middleware \"security-headers@file\" does not exist" entryPointName=websecure routerName=app1@docker
+time="2025-04-01T12:50:56Z" level=info msg="I have to go..."
+time="2025-04-01T12:50:56Z" level=info msg="Stopping server gracefully"
+time="2025-04-01T12:50:56Z" level=error msg="accept tcp [::]:8080: use of closed network connection" entryPointName=traefik
+time="2025-04-01T12:50:56Z" level=error msg="accept tcp [::]:80: use of closed network connection" entryPointName=web
+time="2025-04-01T12:50:56Z" level=error msg="accept tcp [::]:443: use of closed network connection" entryPointName=websecure
+time="2025-04-01T12:50:56Z" level=error msg="close tcp [::]:8080: use of closed network connection" entryPointName=traefik
+time="2025-04-01T12:50:56Z" level=error msg="close tcp [::]:80: use of closed network connection" entryPointName=web
+time="2025-04-01T12:50:56Z" level=error msg="close tcp [::]:443: use of closed network connection" entryPointName=websecure
+time="2025-04-01T12:50:56Z" level=info msg="Server stopped"
+time="2025-04-01T12:50:56Z" level=info msg="Shutting down"
+time="2025-04-01T12:51:58Z" level=info msg="Traefik version 2.10.7 built on 2023-12-06T15:54:59Z"
+time="2025-04-01T12:51:58Z" level=info msg="\nStats collection is disabled.\nHelp us improve Traefik by turning this feature on :)\nMore details on: https://doc.traefik.io/traefik/contributing/data-collection/\n"
+time="2025-04-01T12:51:58Z" level=info msg="Starting provider aggregator aggregator.ProviderAggregator"
+time="2025-04-01T12:51:58Z" level=info msg="Starting provider *file.Provider"
+time="2025-04-01T12:51:58Z" level=error msg="Cannot start the provider *file.Provider: error adding file watcher: no such file or directory"
+time="2025-04-01T12:51:58Z" level=info msg="Starting provider *traefik.Provider"
+time="2025-04-01T12:51:58Z" level=info msg="Starting provider *docker.Provider"
+time="2025-04-01T12:51:58Z" level=info msg="Starting provider *acme.ChallengeTLSALPN"
+time="2025-04-01T12:51:58Z" level=error msg="middleware \"security-headers@file\" does not exist" entryPointName=websecure routerName=app1@docker
+time="2025-04-01T12:51:58Z" level=error msg="middleware \"security-headers@file\" does not exist" routerName=app2@docker entryPointName=websecure
+time="2025-04-01T12:55:12Z" level=info msg="I have to go..."
+time="2025-04-01T12:55:12Z" level=info msg="Stopping server gracefully"
+time="2025-04-01T12:55:12Z" level=error msg="accept tcp [::]:8080: use of closed network connection" entryPointName=traefik
+time="2025-04-01T12:55:12Z" level=error msg="accept tcp [::]:80: use of closed network connection" entryPointName=web
+time="2025-04-01T12:55:12Z" level=error msg="close tcp [::]:80: use of closed network connection" entryPointName=web
+time="2025-04-01T12:55:12Z" level=error msg="accept tcp [::]:443: use of closed network connection" entryPointName=websecure
+time="2025-04-01T12:55:12Z" level=error msg="close tcp [::]:443: use of closed network connection" entryPointName=websecure
+time="2025-04-01T12:55:12Z" level=error msg="close tcp [::]:8080: use of closed network connection" entryPointName=traefik
+time="2025-04-01T12:55:12Z" level=info msg="Server stopped"
+time="2025-04-01T12:55:12Z" level=info msg="Shutting down"
+time="2025-04-01T12:56:07Z" level=info msg="Traefik version 2.10.7 built on 2023-12-06T15:54:59Z"
+time="2025-04-01T12:56:07Z" level=info msg="\nStats collection is disabled.\nHelp us improve Traefik by turning this feature on :)\nMore details on: https://doc.traefik.io/traefik/contributing/data-collection/\n"
+time="2025-04-01T12:56:07Z" level=info msg="Starting provider aggregator aggregator.ProviderAggregator"
+time="2025-04-01T12:56:07Z" level=info msg="Starting provider *file.Provider"
+time="2025-04-01T12:56:07Z" level=info msg="Starting provider *traefik.Provider"
+time="2025-04-01T12:56:07Z" level=info msg="Starting provider *docker.Provider"
+time="2025-04-01T12:56:07Z" level=info msg="Starting provider *acme.ChallengeTLSALPN"
+time="2025-04-01T13:06:09Z" level=warning msg="A new release has been found: 3.3.5. Please consider updating."
+time="2025-04-01T13:15:24Z" level=info msg="I have to go..."
+time="2025-04-01T13:15:24Z" level=info msg="Stopping server gracefully"
+time="2025-04-01T13:15:24Z" level=error msg="accept tcp [::]:443: use of closed network connection" entryPointName=websecure
+time="2025-04-01T13:15:24Z" level=error msg="close tcp [::]:443: use of closed network connection" entryPointName=websecure
+time="2025-04-01T13:15:24Z" level=error msg="accept tcp [::]:8080: use of closed network connection" entryPointName=traefik
+time="2025-04-01T13:15:24Z" level=error msg="accept tcp [::]:80: use of closed network connection" entryPointName=web
+time="2025-04-01T13:15:24Z" level=error msg="close tcp [::]:80: use of closed network connection" entryPointName=web
+time="2025-04-01T13:15:24Z" level=error msg="close tcp [::]:8080: use of closed network connection" entryPointName=traefik
+time="2025-04-01T13:15:24Z" level=info msg="Server stopped"
+time="2025-04-01T13:15:24Z" level=info msg="Shutting down"
+time="2025-04-01T13:15:42Z" level=info msg="Traefik version 2.10.7 built on 2023-12-06T15:54:59Z"
+time="2025-04-01T13:15:42Z" level=info msg="\nStats collection is disabled.\nHelp us improve Traefik by turning this feature on :)\nMore details on: https://doc.traefik.io/traefik/contributing/data-collection/\n"
+time="2025-04-01T13:15:42Z" level=info msg="Starting provider aggregator aggregator.ProviderAggregator"
+time="2025-04-01T13:15:42Z" level=info msg="Starting provider *file.Provider"
+time="2025-04-01T13:15:42Z" level=info msg="Starting provider *traefik.Provider"
+time="2025-04-01T13:15:42Z" level=info msg="Starting provider *docker.Provider"
+time="2025-04-01T13:15:42Z" level=info msg="Starting provider *acme.ChallengeTLSALPN"
+time="2025-04-01T13:25:44Z" level=warning msg="A new release has been found: 3.3.5. Please consider updating."
+time="2025-04-01T13:59:20Z" level=info msg="I have to go..."
+time="2025-04-01T13:59:20Z" level=info msg="Stopping server gracefully"
+time="2025-04-01T13:59:20Z" level=error msg="accept tcp [::]:8082: use of closed network connection" entryPointName=metrics
+time="2025-04-01T13:59:20Z" level=error msg="close tcp [::]:8082: use of closed network connection" entryPointName=metrics
+time="2025-04-01T13:59:20Z" level=error msg="accept tcp [::]:80: use of closed network connection" entryPointName=web
+time="2025-04-01T13:59:20Z" level=error msg="accept tcp [::]:443: use of closed network connection" entryPointName=websecure
+time="2025-04-01T13:59:20Z" level=error msg="close tcp [::]:443: use of closed network connection" entryPointName=websecure
+time="2025-04-01T13:59:20Z" level=error msg="accept tcp [::]:8080: use of closed network connection" entryPointName=traefik
+time="2025-04-01T13:59:20Z" level=error msg="close tcp [::]:8080: use of closed network connection" entryPointName=traefik
+time="2025-04-01T13:59:20Z" level=error msg="close tcp [::]:80: use of closed network connection" entryPointName=web
+time="2025-04-01T13:59:21Z" level=info msg="Server stopped"
+time="2025-04-01T13:59:21Z" level=info msg="Shutting down"
+time="2025-04-01T14:00:33Z" level=info msg="Traefik version 2.10.7 built on 2023-12-06T15:54:59Z"
+time="2025-04-01T14:00:33Z" level=info msg="\nStats collection is disabled.\nHelp us improve Traefik by turning this feature on :)\nMore details on: https://doc.traefik.io/traefik/contributing/data-collection/\n"
+time="2025-04-01T14:00:33Z" level=info msg="Starting provider aggregator aggregator.ProviderAggregator"
+time="2025-04-01T14:00:33Z" level=info msg="Starting provider *file.Provider"
+time="2025-04-01T14:00:33Z" level=info msg="Starting provider *traefik.Provider"
+time="2025-04-01T14:00:33Z" level=info msg="Starting provider *docker.Provider"
+time="2025-04-01T14:00:33Z" level=info msg="Starting provider *acme.ChallengeTLSALPN"
+time="2025-04-01T14:10:36Z" level=warning msg="A new release has been found: 3.3.5. Please consider updating."
+time="2025-04-02T14:00:35Z" level=warning msg="A new release has been found: 3.3.5. Please consider updating."
+time="2025-04-03T11:24:43Z" level=info msg="I have to go..."
+time="2025-04-03T11:24:43Z" level=info msg="Stopping server gracefully"
+time="2025-04-03T11:24:43Z" level=error msg="accept tcp [::]:443: use of closed network connection" entryPointName=websecure
+time="2025-04-03T11:24:43Z" level=error msg="accept tcp [::]:80: use of closed network connection" entryPointName=web
+time="2025-04-03T11:24:43Z" level=error msg="Error while starting server: accept tcp [::]:443: use of closed network connection" entryPointName=websecure
+time="2025-04-03T11:24:43Z" level=error msg="close tcp [::]:80: use of closed network connection" entryPointName=web
+time="2025-04-03T11:24:43Z" level=error msg="accept tcp [::]:8080: use of closed network connection" entryPointName=traefik
+time="2025-04-03T11:24:43Z" level=error msg="close tcp [::]:8080: use of closed network connection" entryPointName=traefik
+time="2025-04-03T11:24:43Z" level=error msg="accept tcp [::]:8082: use of closed network connection" entryPointName=metrics
+time="2025-04-03T11:24:43Z" level=error msg="close tcp [::]:8082: use of closed network connection" entryPointName=metrics
+time="2025-04-03T11:24:43Z" level=info msg="Server stopped"
+time="2025-04-03T11:24:43Z" level=info msg="Shutting down"
