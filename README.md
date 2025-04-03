@@ -6,7 +6,7 @@ This project sets up a **monitoring suite** using **Traefik, Prometheus, and Gra
 
 ## 🔥 Features
 
-- ✅ **Traefik as a Reverse Proxy** with automatic HTTPS (TLS/SSL).
+- ✅ **Traefik as a Reverse Proxy and Load Balancer** with automatic HTTPS (TLS/SSL).
 - ✅ **Prometheus for scraping metrics** from Traefik.
 - ✅ **Grafana for visualization** and real-time monitoring.
 - ✅ **Security-focused setup** with TLS, HSTS, and firewall rules.
@@ -42,13 +42,17 @@ This project sets up a **monitoring suite** using **Traefik, Prometheus, and Gra
    docker run -d --name prometheus --network dmz-net -p 9090:9090 -v $(pwd)/config/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus
    docker run -d --name grafana --network dmz-net -p 3000:3000 grafana/grafana
    ```
-4. **Configure Grafana to Use Prometheus:**
+4. **Connect Traefik to the internal network:**
+   ```bash
+   docker network connect internal-net traefik
+   ```
+5. **Configure Grafana to Use Prometheus:**
    - Open Grafana: [http://localhost:3000](http://localhost:3000)
    - Login with `admin/admin`
    - Go to **Configuration > Data Sources**
    - Add **Prometheus** as a source (`http://prometheus:9090`)
    - Save & Test
-5. **Import a Pre-Built Dashboard:**
+6. **Import a Pre-Built Dashboard:**
    - Go to **Dashboards > Import**
    - Enter Dashboard ID: `17346` *(or any other Traefik dashboard)*
    - Select Prometheus as the data source and **Import**
@@ -61,11 +65,19 @@ This project sets up a **monitoring suite** using **Traefik, Prometheus, and Gra
 
 ## 🔒 Security & Hardening
 
-- **Enable HTTPS (TLS/SSL) with Let’s Encrypt**
+- **Enable HTTPS (TLS/SSL) using OpenSSL-generated certificates**
 - **Force HTTP to HTTPS redirection**
 - **Enable HSTS for extra security**
 - **Fine-tune firewall rules to prevent bypassing Traefik**
 - **Implement logging & monitoring alerts**
+
+## 🔥 Firewall Rules
+
+```bash
+sudo iptables -A DOCKER-USER -s 192.168.100.2 -d 192.168.200.0/24 -j ACCEPT
+sudo iptables -A DOCKER-USER -i eth0 -s 0.0.0.0/0 -d 192.168.200.0/24 -j DROP
+sudo iptables -A DOCKER-USER -s 192.168.200.0/24 -d 192.168.200.0/24 -j ACCEPT
+```
 
 ## 🛠 Troubleshooting
 
@@ -81,6 +93,7 @@ This project sets up a **monitoring suite** using **Traefik, Prometheus, and Gra
 
 - **Containerization** with Docker
 - **Reverse Proxy Configuration** using Traefik
+- **Load Balancing** using Traefik
 - **Monitoring & Metrics Collection** with Prometheus
 - **Data Visualization** using Grafana
 - **Security Enhancements** (TLS, HSTS, firewall rules)
@@ -100,6 +113,8 @@ This project sets up a **monitoring suite** using **Traefik, Prometheus, and Gra
 - **Implement Log Aggregation (ELK/Fluentd)**
 - **Add Alerting with Prometheus & Grafana**
 - **Include Docker Swarm/Kubernetes deployment**
+- **Implement mTLS (Mutual TLS) for stronger authentication**
+- **Automate OpenSSL certificate renewal**
 
 ## 📜 License
 
