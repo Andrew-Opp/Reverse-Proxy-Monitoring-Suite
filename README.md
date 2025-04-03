@@ -13,8 +13,8 @@ This project sets up a **monitoring suite** using **Traefik, Prometheus, and Gra
 - ✅ **Alerting & logging** for traffic anomalies and failures.
 
 ## 🏗 Architecture Diagram
+![Architecture Diagram](https://github.com/user-attachments/assets/d3e423c6-f885-4ac6-9f11-fed5fb4d0f19)
 
-*(Include a simple network diagram showing Traefik, Prometheus, and Grafana in action.)*
 
 ## 🛠 Installation Guide
 
