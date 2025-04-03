@@ -29,7 +29,7 @@ This project sets up a **monitoring suite** using **Traefik, Prometheus, and Gra
 1. **Clone the Repository:**
    ```bash
    git clone https://github.com/Andrew-Opp/Reverse-Proxy-Monitoring-Suite.git
-   cd Reverse-Proxy-Monitoring-Suite
+   cd Reverse-Proxy-Monitoring-Suite/traefik
    ```
 2. **Create Docker Networks:**
    ```bash
@@ -38,9 +38,35 @@ This project sets up a **monitoring suite** using **Traefik, Prometheus, and Gra
    ```
 3. **Start the Containers in dmz-net Network:**
    ```bash
-   docker run -d --name traefik --network dmz-net -p 80:80 -p 443:443 traefik:v2.9
-   docker run -d --name prometheus --network dmz-net -p 9090:9090 -v $(pwd)/config/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus
-   docker run -d --name grafana --network dmz-net -p 3000:3000 grafana/grafana
+   docker run -d \
+  --name traefik \
+  --network dmz-net \
+  --restart always \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v "$(pwd)/certs:/etc/traefik/certs" \
+  -v "$(pwd)/middlewares:/etc/traefik/middlewares" \
+  -v "$(pwd)/traefik.yml:/etc/traefik/traefik.yaml" \
+  -v "$(pwd)/log:/var/log/traefik" \
+  -p 80:80 \
+  -p 8080:8080 -p 8082:8082 \
+  -p 443:443 \
+  traefik:v2.10
+
+   docker run -d \
+  --name prometheus \
+  --network dmz-net \
+  --restart always \
+  -v "$(pwd)/prometheus.yml:/etc/prometheus/prometheus.yml" \
+  -p 9090:9090 \
+  prom/prometheus
+
+   docker run -d \
+  --name grafana \
+  --network dmz-net \
+  --restart always \
+  -p 3000:3000 \
+  grafana/grafana
+
    ```
 4. **Connect Traefik to the internal network:**
    ```bash
@@ -74,8 +100,13 @@ This project sets up a **monitoring suite** using **Traefik, Prometheus, and Gra
 ## 🔥 Firewall Rules
 
 ```bash
+# Allow dmz-net (Traefik) to access internal-net
 sudo iptables -A DOCKER-USER -s 192.168.100.2 -d 192.168.200.0/24 -j ACCEPT
+
+# Block external traffic from reaching internal-net
 sudo iptables -A DOCKER-USER -i eth0 -s 0.0.0.0/0 -d 192.168.200.0/24 -j DROP
+
+# Allow internal-net traffic to communicate within itself
 sudo iptables -A DOCKER-USER -s 192.168.200.0/24 -d 192.168.200.0/24 -j ACCEPT
 ```
 
