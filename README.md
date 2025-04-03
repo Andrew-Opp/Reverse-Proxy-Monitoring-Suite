@@ -39,33 +39,34 @@ This project sets up a **monitoring suite** using **Traefik, Prometheus, and Gra
 3. **Start the Containers in dmz-net Network:**
    ```bash
    docker run -d \
-  --name traefik \
-  --network dmz-net \
-  --restart always \
-  -v /var/run/docker.sock:/var/run/docker.sock \
-  -v "$(pwd)/certs:/etc/traefik/certs" \
-  -v "$(pwd)/middlewares:/etc/traefik/middlewares" \
-  -v "$(pwd)/traefik.yml:/etc/traefik/traefik.yaml" \
-  -v "$(pwd)/log:/var/log/traefik" \
-  -p 80:80 \
-  -p 8080:8080 -p 8082:8082 \
-  -p 443:443 \
-  traefik:v2.10
+   --name traefik \
+   --network dmz-net \
+   --restart always \
+   -v /var/run/docker.sock:/var/run/docker.sock \
+   -v "$(pwd)/certs:/etc/traefik/certs" \
+   -v "$(pwd)/middlewares:/etc/traefik/middlewares" \
+   -v "$(pwd)/traefik.yml:/etc/traefik/traefik.yaml" \
+   -v "$(pwd)/log:/var/log/traefik" \
+   -p 80:80 \
+   -p 8080:8080 \
+   -p 8082:8082 \
+   -p 443:443 \
+   traefik:v2.10
 
    docker run -d \
-  --name prometheus \
-  --network dmz-net \
-  --restart always \
-  -v "$(pwd)/prometheus.yml:/etc/prometheus/prometheus.yml" \
-  -p 9090:9090 \
-  prom/prometheus
+   --name prometheus \
+   --network dmz-net \
+   --restart always \
+   -v "$(pwd)/prometheus.yml:/etc/prometheus/prometheus.yml" \
+   -p 9090:9090 \
+   prom/prometheus
 
    docker run -d \
-  --name grafana \
-  --network dmz-net \
-  --restart always \
-  -p 3000:3000 \
-  grafana/grafana
+   --name grafana \
+   --network dmz-net \
+   --restart always \
+   -p 3000:3000 \
+   grafana/grafana
 
    ```
 4. **Connect Traefik to the internal network:**
